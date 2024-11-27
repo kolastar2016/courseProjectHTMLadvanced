@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+
+# Папка сборки, где создаются финальные файлы (dist или build)
+dist/
+build/
+
+# Файлы конфигурации IDE
+.vscode/
+.idea/
+
+# Логи и временные файлы
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+*.log
+
+# Кэш и временные файлы
+.cache/
+
+# Файлы, генерируемые во время сборки
+*.gz
+*.zip
+*.tar
+*.tgz
+
+# Системные файлы
+.DS_Store
+
+# Прочее, что не нужно отслеживать
+*.swp
+*.bak
+*.tmp

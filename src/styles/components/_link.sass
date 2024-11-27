@@ -1,0 +1,21 @@
+@use "../abstracts/vars" as vars
+
+a
+	font-size: 16px
+	line-height: 20px
+	color: vars.$corporate-violet
+	font-family: vars.$secondary-regular
+	transition: vars.$tertiary-transition
+	background-image: linear-gradient(to right, vars.$corporate-violet 0%, vars.$corporate-violet 100%)
+	background-repeat: no-repeat
+	background-position: 0% 95%
+	background-size: 100% 1px
+	&:active,
+	&:focus
+		outline: none
+		text-decoration: none
+	&:hover
+		color: vars.$corporate-violet
+		text-decoration: none
+		cursor: pointer
+		background-size: 0% 1px
