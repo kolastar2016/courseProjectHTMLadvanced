@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzanio</title>
     <style>
-    /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Colors */
+        :root {
+            --main-bg-color: #20202a;
+            --accent-color: #d94e30;
+            --text-color: #ffffff;
+            --secondary-text-color: #b5b5b5;
+            --promo-highlight-color: #a23b2b;
+            --light-accent: #f5a899;
         }
 
         body {
@@ -23,7 +32,7 @@
             background-color: #ec4d2f;
             display: flex;
             align-items: center;
-            padding: 35px 0;
+            padding: 20px 0;
         }
 
         .header-logo {
@@ -31,16 +40,17 @@
             width: 25vw;
             display: flex;
             justify-content: flex-end;
-            /* text-align: end; */
-            /* float: right; */
-            /* margin: 0 auto; */
-            border-bottom-right-radius: 20px;
-            border-top-right-radius: 20px;
-            padding: 20px;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 30px;
+            padding: 10px;
         }
 
         .main-content {
             background-color: #1d1b2b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 80px;
         }
 
         .container {
@@ -51,30 +61,31 @@
         .navbar-container {
             display: flex;
             justify-content: center;
-            /* max-width: 1150px; */
             margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 15px 60px; */
         }
 
         .nav-links {
             display: flex;
             gap: 50px
         }
-        
+            
         .nav-links a {
             color: #fff;
             font-size: 18px;
-            /* font-weight: bold; */
-
             text-decoration: none;
             gap: 100px;
-            /* margin: 0 40px; */
             padding: 5px 10px;
-            /* position: relative; */
         }
-        
+            
         .nav-links a:hover {
             background-color: #b83922;
-
         }
 
         .nav-icons {
@@ -82,58 +93,31 @@
             background-color: #b83922;
             display: flex;
             justify-content: flex-start;
-            border-bottom-left-radius: 20px;
-            border-top-left-radius: 20px;
-            padding: 20px;
+            border-bottom-left-radius: 30px;
+            border-top-left-radius: 30px;
+            padding: 10px;
+            gap: 20px;
+        }
+            
+        .icon {
+            font-size: 1.3rem;
+            color: var(--text-color);
         }
 
         .footer {
             background-color: #ec4d2f;
             display: flex;
         }
-        /* Colors */
-        /* :root {
-            --main-bg-color: #20202a;
-            --accent-color: #d94e30;
-            --text-color: #ffffff;
-            --secondary-text-color: #b5b5b5;
-            --promo-highlight-color: #a23b2b;
-            --light-accent: #f5a899;
-        } */
-        /* 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; */
-            /* padding: 15px 60px; */
-        /* }
 
-        
+        /*        
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
             color: var(--text-color);
             background-color: red;
         }
-        
-        .nav-icons {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .icon {
-            font-size: 1.3rem;
-            color: var(--text-color);
-        }
          */
         /* Main Content */
-        /* .main-content { */
-            /* display: flex;
-            justify-content: space-between;
-            align-items: center; */
-            /* padding: 60px 80px; */
-        /* } */
-        
         /* .promo { */
             /* max-width: 45%;
             color: var(--text-color); */
@@ -201,46 +185,46 @@
         } */
         
         /* Pizza Image */
-        /* .pizza-image-container { */
-            /* position: relative;
+        .pizza-image-container {
+            position: relative;
             width: 400px;
-            height: 400px; */
-        /* } */
+            height: 400px;
+        }
         
-        /* .pizza-image-container img { */
-            /* width: 100%;
+        .pizza-image-container img {
+            width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 5px solid var(--accent-color); */
-        /* } */
+            border: 5px solid var(--accent-color);
+        }
         
-        /* .discount-tag {
-            position: absolute; */
-            /* top: -20px;
-            right: -20px; */
-            /* background-color: transparent;
+        .discount-tag {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background-color: transparent;
             color: var(--accent-color);
             font-size: 1.5rem;
             border: 2px solid var(--accent-color);
-            border-radius: 50%; */
-            /* padding: 10px 20px; */
-        /* } */
+            border-radius: 50%;
+            padding: 10px 20px;
+        }
         
         /* Carousel Controls */
-        /* .carousel-controls { */
-            /* display: flex;
+        .carousel-controls {
+            display: flex;
             justify-content: center;
-            margin-top: 30px; */
-        /* } */
+            margin-top: 30px;
+        }
         
-        /* .carousel-controls button { */
-            /* margin: 0 10px;
+        .carousel-controls button {
+            margin: 0 10px;
             font-size: 2rem;
             color: var(--accent-color);
             background: none;
             border: none;
-            cursor: pointer; */
-        /* }÷ */
+            cursor: pointer;
+        }
         
         /* Footer */
         /* .footer {
@@ -274,22 +258,7 @@
         } */
     </style>
     <style>
-        
-    
 
-        
-        /* Сброс всех стилей */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-} */
-
-/* Основной хедер */
 /* .header {
   width: 100%;
   display: flex;
@@ -297,7 +266,6 @@ body {
   position: relative;
 } */
 
-/* Логотип */
 /* .header-logo {
   background-color: #444;
   width: 100vw;
@@ -319,7 +287,6 @@ body {
   z-index: 1;
 } */
 
-/* Контейнер для навигации */
 /* .container {
   width: 100%;
   max-width: 1200px; 
@@ -329,7 +296,6 @@ body {
   z-index: 2;
 } */
 
-/* Навигация */
 /* .navbar {
   display: flex;
   justify-content: center;
@@ -337,7 +303,6 @@ body {
   padding: 20px 0;
 } */
 
-/* Ссылки навигации */
 /* .nav-links {
   display: flex;
   gap: 20px;
@@ -349,7 +314,6 @@ body {
   font-size: 18px;
 } */
 
-/* Иконки */
 /* .nav-icons {
   display: flex;
   gap: 10px;
@@ -361,7 +325,6 @@ body {
   color: white;
 } */
 
-/* Стили для ссылок при наведении */
 /* .nav-links a:hover {
   text-decoration: underline;
 } */
@@ -373,6 +336,7 @@ body {
 
     <header class="header">
         <div class="header-logo">
+            <!-- <img src="" alt=""> logo -->
           <div class="logo">Pizzanio</div>
         </div>
         <div class="navbar-container">
@@ -386,6 +350,7 @@ body {
           </div>
         </div>
         <div class="nav-icons">
+            <!-- icon -->
             <span class="icon">🌐</span>
             <span class="icon">👤</span>
         </div>
