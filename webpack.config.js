@@ -11,13 +11,13 @@ module.exports = (env, argv) => {
 
   return {
     entry: {
-      main: './src/scripts/index.js', // главный JS файл
-      styles: './src/styles/main.sass', // главный SASS файл
+      main: './src/scripts/index.js', 
+      styles: './src/styles/main.sass',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'scripts/[name].[contenthash].js',
-      assetModuleFilename: 'assets/images/[hash][ext][query]', // для изображений
+      assetModuleFilename: 'assets/images/[hash][ext][query]', 
       clean: true,
     },
     devServer: {
@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
         {
           test: /\.s[ac]ss$/i,
           use: [
-            isProd ? MiniCssExtractPlugin.loader : 'style-loader', // Для DEV используем style-loader
+            isProd ? MiniCssExtractPlugin.loader : 'style-loader', 
             'css-loader',
             'sass-loader'
           ],
@@ -55,7 +55,7 @@ module.exports = (env, argv) => {
     plugins: [
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
-        filename: isProd ? 'styles/[name].[contenthash].css' : 'styles/[name].css', // Без хеша для DEV
+        filename: isProd ? 'styles/[name].[contenthash].css' : 'styles/[name].css',
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
