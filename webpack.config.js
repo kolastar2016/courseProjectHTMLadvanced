@@ -19,6 +19,7 @@ module.exports = (env, argv) => {
       filename: 'scripts/[name].[contenthash].js',
       assetModuleFilename: 'assets/images/[hash][ext][query]', 
       clean: true,
+      publicPath: process.env.NODE_ENV === 'production' ? '/courseProjectHTMLadvanced/' : '/',
     },
     devServer: {
       static: path.resolve(__dirname, 'dist'),
