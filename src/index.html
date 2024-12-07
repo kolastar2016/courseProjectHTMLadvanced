@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/icon-brouser.jpg" type="image/jpg">
+    <link rel="apple-touch-icon" href="assets/images/icon-brouser.jpg">
     <title>Pizzanio</title>
     <style>
         * {
@@ -40,22 +42,14 @@
             width: 25vw;
             display: flex;
             justify-content: flex-end;
-            border-bottom-right-radius: 30px;
-            border-top-right-radius: 30px;
+            border-bottom-right-radius: 40px;
+            border-top-right-radius: 40px;
             padding: 10px;
         }
 
-        .main-content {
-            background-color: #1d1b2b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 80px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: 0 auto;
+        .logo {
+            height: 50px;
+            color: var(--text-color);
         }
 
         .navbar-container {
@@ -68,7 +62,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* padding: 15px 60px; */
         }
 
         .nav-links {
@@ -93,9 +86,9 @@
             background-color: #b83922;
             display: flex;
             justify-content: flex-start;
-            border-bottom-left-radius: 30px;
-            border-top-left-radius: 30px;
-            padding: 10px;
+            border-bottom-left-radius: 40px;
+            border-top-left-radius: 40px;
+            padding: 10px 0px 10px 25px;
             gap: 20px;
         }
             
@@ -104,110 +97,132 @@
             color: var(--text-color);
         }
 
-        .footer {
-            background-color: #ec4d2f;
-            display: flex;
+        /* Main Content */
+        .main-content {
+            background-color: #1d1b2b;
         }
 
-        /*        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--text-color);
-            background-color: red;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
-         */
-        /* Main Content */
-        /* .promo { */
-            /* max-width: 45%;
-            color: var(--text-color); */
-        /* }
+
+        .container-flex {
+            display: flex;
+            padding: 40px 0;
+        }
+
+        .promo {
+            width: 55%;
+            color: var(--text-color);
+        }
         
         .promo h1 {
-            font-size: 4rem;
+            /* font-size: 130px;
             font-weight: bold;
             margin-bottom: 10px;
+            transform: scaleY(2); */
+            /* letter-spacing: 5px; */
         }
         
         .promo .special-text {
-            color: var(--promo-highlight-color);
+            /* color: var(--promo-highlight-color);
             font-style: italic;
-            font-size: 3.5rem;
+            font-size: 3.5rem; */
         }
         
         .promo-description {
-            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: var(--text-color);
         }
         
         .promo-text {
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 16px;
             color: var(--secondary-text-color);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            width: 88%;
         }
         
         .promo-list {
-            list-style-type: none;
+            list-style-type: circle;
             color: var(--secondary-text-color);
             font-size: 1rem;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            margin-left: 15px;
         }
         
         .promo-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
-        .promo-list li::before {
-            content: '•';
+        .promo-list li::marker {
             color: var(--accent-color);
-            font-size: 1.5rem;
             margin-right: 10px;
         }
         
-        .cta-button {
+        .button {
             padding: 10px 30px;
             border: 2px solid var(--accent-color);
-            background: none;
-            color: var(--text-color);
-            font-size: 1rem;
+            border-radius: 8px;
+            background: radial-gradient(ellipse,#201c2b ,#40232c );
+            color: var(--secondary-text-color);
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-transform: uppercase;
         }
         
-        .cta-button:hover {
-            background-color: var(--accent-color);
-        } */
+        .button:hover {
+            color: var(--text-color);
+            background: var(--accent-color);
+        }
         
         /* Pizza Image */
-        .pizza-image-container {
+        .carousel-container {
+            width: 45%;
             position: relative;
-            width: 400px;
-            height: 400px;
+            padding-top: 50px;
         }
-        
-        .pizza-image-container img {
-            width: 100%;
-            height: 100%;
+
+        .carousel-img {
+            /* width: 100%; */
+            width: 540px;
+            height: 540px;
             border-radius: 50%;
             border: 5px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse,#201c2b ,#40232c );
+            position: relative;
+            z-index: 10;
+        }
+        
+        .carousel-img img {
+            width: 90%;
+            border-radius: 50%;
         }
         
         .discount-tag {
             position: absolute;
-            top: -20px;
-            right: -20px;
+            font-style: italic;
+            top: 0px;
+            left: 0px;
             background-color: transparent;
             color: var(--accent-color);
-            font-size: 1.5rem;
+            font-size: 40px;
             border: 2px solid var(--accent-color);
             border-radius: 50%;
-            padding: 10px 20px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
         }
         
         /* Carousel Controls */
@@ -220,124 +235,139 @@
         .carousel-controls button {
             margin: 0 10px;
             font-size: 2rem;
-            color: var(--accent-color);
-            background: none;
+            color: var(--text-color);
+            background: #b83922;
             border: none;
             cursor: pointer;
+            width: 100px;
+            height: 50px;
+        }
+
+        .carousel-controls button:hover {
+            background: #ec4d2f;
+        }
+
+        .carousel-left {
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        .carousel-right {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
         }
         
         /* Footer */
-        /* .footer {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 40px;
-            background-color: var(--accent-color);
+        .footer {
+            background-color: #b83922;
             color: var(--text-color);
         }
-        
+
         .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            width: 50%;
+        }
+
+        .footer-information {
+            display: flex;
+            width: 50%;
         }
         
         .footer-links {
             display: flex;
+            flex-direction: column;
+            width: 50%;
             gap: 20px;
+            font-size: 16px;
         }
         
         .footer-links a {
-            color: var(--text-color);
-            font-size: 1rem;
+            color: #f6e6e3;
             text-decoration: none;
         }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
         
-        .footer-contact p {
-            margin: 5px 0;
-            font-size: 1rem;
-        } */
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 16px;
+        }
+
+        .footer-contact a {
+            color: #f6e6e3;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: #fff;
+        }
     </style>
-    <style>
+    <script>
+        console.log("tests");
+        document.addEventListener("DOMContentLoaded", function () {
+        const carouselContainer = document.querySelector('.carousel-container');
+        const carouselImg = document.querySelector('.carousel-img img');
+        const leftButton = document.querySelector('.carousel-left');
+        const rightButton = document.querySelector('.carousel-right');
 
-/* .header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-} */
+        const images = [
+            'assets/images/main-pizza.jpg',
+            'assets/images/main-icon.jpg',
+            'assets/images/icon-brouser.jpg'
+        ];
+        let currentIndex = 0;
+        let interval;
 
-/* .header-logo {
-  background-color: #444;
-  width: 100vw;
-  position: absolute;
-  left: 0; 
-  top: 0;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 30px; 
-} */
+        function changeImage(index) {
+            carouselImg.src = images[index];
+        }
 
-/* .logo {
-  font-size: 28px;
-  color: white;
-  padding: 20px;
-  white-space: nowrap;
-  z-index: 1;
-} */
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            changeImage(currentIndex);
+        }
 
-/* .container {
-  width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto;
-  padding: 0 15px;
-  position: relative;
-  z-index: 2;
-} */
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            changeImage(currentIndex);
+        }
 
-/* .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-} */
+        function startAutoRotate() {
+            interval = setInterval(nextImage, 2000); 
+        }
 
-/* .nav-links {
-  display: flex;
-  gap: 20px;
-}
+        function stopAutoRotate() {
+            clearInterval(interval);
+        }
+        
+        rightButton.addEventListener('click', function () {
+            stopAutoRotate();
+            nextImage();
+            startAutoRotate();
+        });
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-} */
+        leftButton.addEventListener('click', function () {
+            stopAutoRotate();
+            prevImage();
+            startAutoRotate();
+        });
 
-/* .nav-icons {
-  display: flex;
-  gap: 10px;
-  z-index: 3;
-}
+        changeImage(currentIndex);
+        startAutoRotate();
+    });
 
-.nav-icons .icon {
-  font-size: 24px;
-  color: white;
-} */
-
-/* .nav-links a:hover {
-  text-decoration: underline;
-} */
-
-
-    </style>
+    </script>
 </head>
 <body>
 
     <header class="header">
         <div class="header-logo">
-            <!-- <img src="" alt=""> logo -->
-          <div class="logo">Pizzanio</div>
+            <a class="logo" href="#">
+                <img src="assets/images/main-icon.jpg" alt="">     <!-- Pizzanio       Logo -->
+            </a>
         </div>
         <div class="navbar-container">
           <div class="navbar">
@@ -351,36 +381,44 @@
         </div>
         <div class="nav-icons">
             <!-- icon -->
-            <span class="icon">🌐</span>
-            <span class="icon">👤</span>
+            <span class="icon">
+                <a href="#">
+                    <img src="assets/images/globe-web.svg" alt="global web icon">
+                </a>
+            </span>
+            <span class="icon">
+                <a href="#">
+                    <img src="assets/images/user-cicrle.svg" alt="user icon">
+                </a>
+            </span>
         </div>
       </header>
-      
-
-
-
 
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <section class="promo">
-                <h1>Pizza <span class="special-text">Special</span></h1>
-                <p class="promo-description">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING</p>
-                <p class="promo-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                <ul class="promo-list">
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li>
-                </ul>
-                <button class="cta-button">LOREM IPSUM</button>
-            </section>
-            <div class="pizza-image-container">
-                <div class="discount-tag">-10%</div>
-                <!-- <img src="path/to/your-pizza-image.png" alt="Pizza"> -->
-                <div class="carousel-controls">
-                    <button class="carousel-left">&lt;</button>
-                    <button class="carousel-right">&gt;</button>
-                </div>
+            <div class="container-flex">
+                <section class="promo">
+                    <h1>Pizza <span class="special-text">Special</span></h1>
+                    <p class="promo-description">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    <p class="promo-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <ul class="promo-list">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li>
+                    </ul>
+                    <button class="button">Lorem ipsum </button>
+                </section>
+                <section class="carousel-container">
+                    <div class="discount-tag">-10%</div>
+                    <div class="carousel-img">
+                        <img src="assets/images/main-pizza.jpg" alt="Pizza"> 
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-left">&lt;</button>
+                        <button class="carousel-right">&gt;</button>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
@@ -388,17 +426,25 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo">Pizzanio</div>
-            <div class="footer-links">
-                <a href="#">Головна</a>
-                <a href="#">Меню</a>
-                <a href="#">Замовлення</a>
-                <a href="#">Про нас</a>
-            </div>
-            <div class="footer-contact">
-                <p>+380 1214 11 32</p>
-                <p>+380 1214 11 32</p>
-                <p>example@gmail.com</p>
+            <div class="container-flex">
+                <div class="footer-logo">
+                    <a class="logo" href="#">
+                        <img src="assets/images/main-icon.jpg" alt="">  <!-- Pizzanio       Logo-->
+                    </a>
+                </div>
+                <div class="footer-information">
+                    <div class="footer-links">
+                        <a href="#">Головна</a>
+                        <a href="#">Меню</a>
+                        <a href="#">Замовлення</a>
+                        <a href="#">Про нас</a>
+                    </div>
+                    <div class="footer-contact">
+                        <a href="tel:+380 1214 11 32">+380 1214 11 32</a>
+                        <a href="tel:+380 1214 11 32">+380 1214 11 32</a>
+                        <a href="mailto:example@gmail.com">example@gmail.com</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
