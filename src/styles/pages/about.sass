@@ -1,0 +1,45 @@
+@use "../abstracts/vars" as vars
+@use "../abstracts/fonts" as fonts
+
+.about 
+  .container-flex
+    flex-wrap: wrap
+.about-video-section
+  width: 100%
+  padding-bottom: 50px
+
+  .about-title
+    text-transform: uppercase
+    padding-bottom: 40px
+
+.about-text-section
+  display: flex
+
+  .about-text-left
+    width: auto
+
+  .about-text-right
+    width: 87%
+
+  p
+    padding-bottom: 25px
+    width: 56%
+    line-height: 20px
+
+  ul
+    li
+      padding-bottom: 10px
+      color: #e3e3e5
+      line-height: 20px
+
+  .about-text-left
+    .text-prime
+      color: #e3e3e5
+
+    .text-second
+      color: vars.$secondary-text-color
+      font-style: italic
+
+  .about-text-right
+    ul
+      margin-left: 25px
