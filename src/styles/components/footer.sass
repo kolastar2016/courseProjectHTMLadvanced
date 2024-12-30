@@ -1,0 +1,40 @@
+@use "../abstracts/vars" as vars
+@use "../abstracts/fonts" as fonts
+
+.footer
+  background-color: vars.$accent-color-hover
+  color: vars.$text-color
+
+  &-logo
+    width: 50%
+
+  &-information
+    display: flex
+    width: 50%
+
+  &-links
+    display: flex
+    flex-direction: column
+    width: 50%
+    gap: 20px
+    font-size: 16px
+
+    a
+      color: vars.$third-text-color
+      text-decoration: none
+
+      &:hover
+        color: vars.$text-color
+
+  &-contact
+    display: flex
+    flex-direction: column
+    gap: 20px
+    font-size: 16px
+
+    a
+      color: vars.$third-text-color
+      text-decoration: none
+
+      &:hover
+        color: vars.$text-color

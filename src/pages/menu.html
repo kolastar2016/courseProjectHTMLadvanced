@@ -6,225 +6,6 @@
   <link rel="icon" href="../assets/images/icon-brouser.jpg" type="image/jpg">
   <link rel="apple-touch-icon" href="../assets/images/icon-brouser.jpg">
   <title>Pizzanio</title>
-  <style>
-
-* {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-
-  /* Colors */
-  :root {
-      --main-bg-color: #20202a;
-      --accent-color: #d94e30;
-      --text-color: #ffffff;
-      --secondary-text-color: #b5b5b5;
-      --promo-highlight-color: #a23b2b;
-      --light-accent: #f5a899;
-  }
-
-  body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #fff;
-  }
-
-  .header {
-      background-color: #ec4d2f;
-      display: flex;
-      align-items: center;
-      padding: 20px 0;
-  }
-
-  .header-logo {
-      background-color: #b83922;
-      width: 25vw;
-      display: flex;
-      justify-content: flex-end;
-      border-bottom-right-radius: 40px;
-      border-top-right-radius: 40px;
-      padding: 10px;
-  }
-
-  .logo {
-      height: 50px;
-      color: var(--text-color);
-  }
-
-  .navbar-container {
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-  }
-
-  .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-  .nav-links {
-      display: flex;
-      gap: 50px
-  }
-      
-  .nav-links a {
-      color: #fff;
-      font-size: 18px;
-      text-decoration: none;
-      gap: 100px;
-      padding: 5px 10px;
-  }
-      
-  .nav-links a:hover {
-      background-color: #b83922;
-  }
-
-  .nav-icons {
-      width: 25vw;
-      background-color: #b83922;
-      display: flex;
-      justify-content: flex-start;
-      border-bottom-left-radius: 40px;
-      border-top-left-radius: 40px;
-      padding: 10px 0px 10px 25px;
-      gap: 20px;
-  }
-      
-  .icon {
-      font-size: 1.3rem;
-      color: var(--text-color);
-  }
-
-
-  /* Main Content */
-  .main-content {
-      background-color: #1d1b2b;
-  }
-
-  .container {
-      max-width: 1200px;
-      margin: 0 auto;
-  }
-
-  .container-flex {
-      display: flex;
-      padding: 40px 0;
-  }
-
-
-
-  .menu {
-    margin: 20px auto;
-    text-align: center;
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.pizza-card {
-    background-color: #2A2A3B;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.pizza-card:hover {
-    transform: scale(1.05);
-}
-
-.pizza-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.price {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    color: #F0A500;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.pagination button {
-    background-color: #D22D2D;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.pagination button:hover {
-    background-color: #B52222;
-}
-
-
-  /* Footer */
-  .footer {
-      background-color: #b83922;
-      color: var(--text-color);
-  }
-
-  .footer-logo {
-      width: 50%;
-  }
-
-  .footer-information {
-      display: flex;
-      width: 50%;
-  }
-
-  .footer-links {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      gap: 20px;
-      font-size: 16px;
-  }
-
-  .footer-links a {
-      color: #f6e6e3;
-      text-decoration: none;
-  }
-
-  .footer-links a:hover {
-      color: #fff;
-  }
-
-  .footer-contact {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      font-size: 16px;
-  }
-
-  .footer-contact a {
-      color: #f6e6e3;
-      text-decoration: none;
-  }
-
-  .footer-contact a:hover {
-      color: #fff;
-  }
-  </style>
 </head>
 <body>
 
@@ -238,7 +19,7 @@
         <div class="navbar">
           <nav class="nav-links">
             <a href="../index.html">Головна</a>
-            <a href="../pages/menu.html">Меню</a>
+            <a class="active" href="../pages/menu.html">Меню</a>
             <a href="../pages/order.html">Замовлення</a>
             <a href="../pages/about.html">Про нас</a>
           </nav>
@@ -263,16 +44,15 @@
   <main class="main-content">
     <div class="container">
       <div class="container-flex">
-        <section class="menu pizza-promo">
-          <div class="menu-grid" id="menuPizzanio">
-            <!-- Блоки с пиццами будут генерироваться здесь через JavaScript -->
-        </div>
+        <section class="menu-section pizza-promo">
+          <h3 class="menu-title">меню</h3>
+          <div class="menu-flex" id="menuPizzanio"></div>
 
-        <div class="pagination">
-            <button id="prevPage">&#8249;</button>
-            <button id="nextPage">&#8250;</button>
-            <span id="currentPage">1</span> / <span id="totalPages">3</span>
-        </div>
+          <div class="pagination">
+              <button class="carousel-left" id="prevPage">&lt;</button>
+              <button class="carousel-right" id="nextPage">&gt;</button>
+              <span id="currentPage">1</span> / <span id="totalPages">3</span>
+          </div>
         </section>
       </div>
     </div>
@@ -304,81 +84,4 @@
       </div>
   </footer>
 </body>
-<script>
-  const menuGrid = document.getElementById("menuPizzanio");
-const prevPage = document.getElementById("prevPage");
-const nextPage = document.getElementById("nextPage");
-const currentPage = document.getElementById("currentPage");
-const totalPages = document.getElementById("totalPages");
-
-// Параметры пицц и пагинации
-const pizzas = [
-    { name: "Пепперони", description: "Сыр, томатный соус, пепперони", price: "120 грн", img: "pepperoni.jpg" },
-    { name: "Маргарита", description: "Сыр, томатный соус, базилик", price: "120 грн", img: "margherita.jpg" },
-    { name: "Гавайская", description: "Сыр, томатный соус, ананасы, ветчина", price: "120 грн", img: "hawaiian.jpg" },
-    { name: "Сырная", description: "Сыр моцарелла, пармезан", price: "120 грн", img: "cheese.jpg" },
-    { name: "Мясная", description: "Ветчина, бекон, колбаса", price: "120 грн", img: "meat.jpg" },
-    { name: "Овощная", description: "Помидоры, перец, маслины", price: "120 грн", img: "veggie.jpg" },
-    { name: "Мексиканская", description: "Чили, кукуруза, мясо", price: "120 грн", img: "mexican.jpg" },
-    { name: "Карбонара", description: "Бекон, сливочный соус, сыр", price: "120 грн", img: "carbonara.jpg" },
-    { name: "4 Сыра", description: "Моцарелла, чеддер, пармезан, горгонзола", price: "120 грн", img: "four_cheese.jpg" },
-    { name: "Мексиканская", description: "Чили, кукуруза, мясо", price: "120 грн", img: "mexican.jpg" },
-    { name: "Карбонара", description: "Бекон, сливочный соус, сыр", price: "120 грн", img: "carbonara.jpg" },
-    { name: "4 Сыра", description: "Моцарелла, чеддер, пармезан, горгонзола", price: "120 грн", img: "four_cheese.jpg" },
-    { name: "Мексиканская", description: "Чили, кукуруза, мясо", price: "120 грн", img: "mexican.jpg" },
-    { name: "Карбонара", description: "Бекон, сливочный соус, сыр", price: "120 грн", img: "carbonara.jpg" },
-    { name: "Пепперони", description: "Сыр, томатный соус, пепперони", price: "120 грн", img: "pepperoni.jpg" },
-    { name: "Маргарита", description: "Сыр, томатный соус, базилик", price: "120 грн", img: "margherita.jpg" },
-    { name: "Гавайская", description: "Сыр, томатный соус, ананасы, ветчина", price: "120 грн", img: "hawaiian.jpg" },
-    { name: "4 Сыра", description: "Моцарелла, чеддер, пармезан, горгонзола", price: "120 грн", img: "four_cheese.jpg" },
-    { name: "Мексиканская", description: "Чили, кукуруза, мясо", price: "120 грн", img: "mexican.jpg" },
-    { name: "Карбонара", description: "Бекон, сливочный соус, сыр", price: "120 грн", img: "carbonara.jpg" },
-    { name: "4 Сыра", description: "Моцарелла, чеддер, пармезан, горгонзола", price: "120 грн", img: "four_cheese.jpg" },
-];
-
-const itemsPerPage = 6;
-let currentPageNumber = 1;
-const totalPageCount = Math.ceil(pizzas.length / itemsPerPage);
-
-totalPages.textContent = totalPageCount;
-
-function renderMenuPage(pageNumber) {
-    menuGrid.innerHTML = ""; // Очистка контейнера
-
-    const start = (pageNumber - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const pageItems = pizzas.slice(start, end);
-
-    pageItems.forEach((pizza) => {
-        const pizzaCard = document.createElement("div");
-        pizzaCard.className = "pizza-card";
-        pizzaCard.innerHTML = `
-            <img src="images/${pizza.img}" alt="${pizza.name}" class="pizza-img">
-            <h3>${pizza.name}</h3>
-            <p>${pizza.description}</p>
-            <span class="price">${pizza.price}</span>
-        `;
-        menuGrid.appendChild(pizzaCard);
-    });
-
-    currentPage.textContent = pageNumber;
-}
-
-prevPage.addEventListener("click", () => {
-    if (currentPageNumber > 1) {
-        currentPageNumber--;
-        renderMenuPage(currentPageNumber);
-    }
-});
-
-nextPage.addEventListener("click", () => {
-    if (currentPageNumber < totalPageCount) {
-        currentPageNumber++;
-        renderMenuPage(currentPageNumber);
-    }
-});
-
-// Начальная отрисовка
-renderMenuPage(currentPageNumber);
-</script>
 </html>
